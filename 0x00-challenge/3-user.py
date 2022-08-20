@@ -51,12 +51,9 @@ class User():
         - Compare `__password` and the MD5 value of `pwd`
         """
         # print(hashlib.md5(pwd.encode()).hexdigest().lower() == self.__password)
-        if pwd is None or (type(pwd) is not str):
-            print("a")
+        if pwd is None or type(pwd) is not str:
             return False
         if self.__password is None:
-            print("b")
-
             return False
 
         return hashlib.md5(pwd.encode()).hexdigest().lower() == self.__password
